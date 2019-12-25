@@ -1,0 +1,15 @@
+<view class="content">内容</view>
+<view class="bottom_menu">
+  <view class="menu">
+    <image class="icon" src="/images/tab/classic@highlight.png"></image>
+    <text class="text">流行</text>
+  </view>
+  <view class="menu" >
+    <image class="icon" src="/images/tab/book.png"></image>
+    <text class="text">书单</text>
+  </view>
+  <view class="menu">
+    <image class="icon" src="/images/tab/my.png"></image>
+    <text class="text">喜欢</text>
+  </view>
+</view>
