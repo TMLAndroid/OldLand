@@ -1,0 +1,166 @@
+.header{
+  height: 100rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  box-shadow:0px 2px 12px 0px rgba(201,201,201,0.1);
+}
+.header .left{
+  float: left;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin-left: 30rpx;
+  align-items: center;
+}
+.header .left .tag{
+  width:42rpx;
+height:24rpx;
+font-size:32rpx;
+font-family:PingFang;
+font-weight:400;
+color:rgba(0,0,0,1);
+line-height:40rpx;
+}
+.header .left .day{
+  margin-left:8rpx; 
+  font-size:58rpx;
+font-family:PingFang;
+font-weight:bold;
+color:rgba(0,0,0,1);
+line-height:43rpx;
+}
+
+.header .left .split-line{
+  margin-left: 14rpx;
+  width:2rpx;
+  height:41rpx;
+  background:rgba(1,1,1,1);
+  
+}
+
+.header .left .year-month{
+  margin-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+.header .left .year-month .month{
+  margin:0px;padding:0px;border:0px;
+  font-size:24rpx;
+  line-height: 24rpx;
+  font-family:PingFang;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  
+  
+}
+
+.header .left .year-month .year{
+  margin-top: 5rpx;
+  font-size:20rpx;
+  line-height: 20rpx;
+font-family:PingFang;
+font-weight:500;
+color:rgba(0,0,0,1);
+
+ 
+
+}
+
+.header .right{
+  margin-left: 14rpx;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  align-items: center;
+  margin-right: 31rpx;
+}
+.header .right .like-icon{
+  width: 32rpx;
+  height: 28rpx;
+}
+.header .right .like-num-text{
+  font-size:18rpx;
+  font-family:PingFang;
+  font-weight:400;
+  color:rgba(187,187,187,1);
+  position: relative;
+  top: -10rpx;
+  margin-left: 6rpx;
+  margin-right:41rpx;
+}
+.header .right .share-icon{
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.content{
+  width: 100%;
+  position: absolute;
+  top: 100rpx;
+  bottom: 121rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.movice-bar{
+  width: 100%;
+  height: 500rpx;
+}
+.type-icon{
+  position: relative;
+  top: -60rpx;
+  left: 30rpx;
+  width: 46rpx;
+  height: 142rpx;
+}
+
+.text{
+  font-size:34rpx;
+  font-family:PingFang;
+  font-weight:400;
+  color:rgba(15,15,15,1);
+  padding-top: 37rpx;
+  padding-left: 94rpx;
+ padding-right: 97rpx;
+}
+
+.bottom-container{
+  display: flex;
+  justify-content: center;
+}
+
+.bottom{
+  height: 80rpx;
+  width: 588rpx;
+  bottom: 41rpx;
+  position: absolute;
+  background:rgba(247,247,247,1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottom .pre-icon{
+  width: 23rpx;
+  height: 24rpx;
+  padding-left: 20rpx;
+}
+.bottom .next-icon{
+  width: 23rpx;
+  height: 24rpx;
+  padding-right: 20rpx;
+}
+
+
+.bottom .movice-title{
+  font-size:24rpx;
+  font-family:PingFang;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+}
