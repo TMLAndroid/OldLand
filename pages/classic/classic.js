@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    classics: [],
+    index:0
     
   },
 
@@ -12,7 +14,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    http.getLatest();
+    
+    let that = this;
+    
+      console.log(this.data.classics[0])
+    
+      http.getLatest().then(res=>{
+        this.data.classics.push(res);
+        that.setData({
+          classics: that.data.classics
+        })
+        console.log(that.data.classics)
+      });
+   
+  },
+
+onPre(){
+  console.log('pre');
+},
+  onNext(){
+    console.log('next');
   },
 
   /**

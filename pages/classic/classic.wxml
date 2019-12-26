@@ -1,7 +1,7 @@
 <view class="header">
   <view class="left">
     <text class="tag">No.</text>
-    <text class="day">17</text>
+    <text class="day">{{classics[index].index}}</text>
     <view class="split-line"></view>
     <view class="year-month">
       <text class="month">三月</text>
@@ -10,19 +10,18 @@
   </view>
   <view class="right">
     <image class="like-icon" src="/images/movie/like_check.png"></image>
-    <text class="like-num-text">1172</text>
+    <text class="like-num-text">{{classics[index].fav_nums}}</text>
     <image class="share-icon" src='/images/movie/share.png'></image>
   </view> 
 </view>
 <view class="content">
-  <image class="movice-bar" src="/images/movie/movie_bar.png"></image>
-  <image class="type-icon" src="/images/movie/tyoe_icon.png"></image>
-  <text class="text">人生不能像做菜，把所有的料准备好了才下锅的料准备好了才下锅。</text>
+  <cmp-movie img_path="{{classics[index].image}}"></cmp-movie>
+  <text class="text">{{classics[index].content}}</text>
 </view>
 <view class="bottom-container">
   <view class="bottom">
-    <image class="pre-icon" src="/images/movie/pre.png"></image>
-    <text class="movice-title">李安《饮食男女》</text>
-    <image class="next-icon" src="/images/movie/next.png"></image>
+    <image bindtap="onPre" class="pre-icon" src="/images/movie/pre.png"></image>
+    <text class="movice-title">{{classics[index].title}}</text>
+    <image bindtap="onNext" class="next-icon" src="/images/movie/next.png"></image>
   </view>
 </view>

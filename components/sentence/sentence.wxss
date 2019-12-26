@@ -1,0 +1,12 @@
+.movice-bar{
+  width: 100%;
+  height: 500rpx;
+}
+
+.type-icon{
+  position: relative;
+  top: -60rpx;
+  left: 30rpx;
+  width: 46rpx;
+  height: 142rpx;
+}
