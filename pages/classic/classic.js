@@ -1,4 +1,6 @@
-let http = require('../../utils/http.js');
+let http = require('../../utils/http_.js');
+import {ClassicModel} from '../../model/classic.js'
+let classicModel = new ClassicModel();
 Page({
 
   /**
@@ -19,13 +21,21 @@ Page({
     
       console.log(this.data.classics[0])
     
-      http.getLatest().then(res=>{
-        this.data.classics.push(res);
-        that.setData({
-          classics: that.data.classics
-        })
-        console.log(that.data.classics)
-      });
+    classicModel.getLatest((res)=>{
+      this.data.classics.push(res);
+      console.log('ress', res)
+      that.setData({
+        classics: that.data.classics
+      })
+      console.log(that.data.classics)
+    })
+      // http.getLatest().then(res=>{
+      //   this.data.classics.push(res);
+      //   that.setData({
+      //     classics: that.data.classics
+      //   })
+      //   console.log(that.data.classics)
+      // });
    
   },
 

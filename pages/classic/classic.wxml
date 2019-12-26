@@ -14,10 +14,8 @@
     <image class="share-icon" src='/images/movie/share.png'></image>
   </view> 
 </view>
-<view class="content">
-  <cmp-movie img_path="{{classics[index].image}}"></cmp-movie>
-  <text class="text">{{classics[index].content}}</text>
-</view>
+<cmp-movie img="{{classics[index].image}}" content="{{classics[index].content}}"></cmp-movie>
+
 <view class="bottom-container">
   <view class="bottom">
     <image bindtap="onPre" class="pre-icon" src="/images/movie/pre.png"></image>

@@ -1,12 +1,12 @@
 import { config } from '../config.js'
 class HTTP{
   constructor(){
-    this.baseRestUrl = config.api_blink_url;
+    this.baseUrl = config.api_blink_url;
   }
 
   request(params){
     wx.request({
-      url: this.baseRestUrl+params.url,
+      url: baseUrl+params.url,
       method:params.method,
       data:params.data,
       header:{
