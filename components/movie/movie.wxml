@@ -1,6 +1,5 @@
-
 <view class="content">
   <image class="movice-bar" src="{{img}}"></image>
-  <image class="type-icon" src="/images/movie/type_icon.png"></image>
+  <image class="type-icon" src="images/type_icon.png"></image>
   <text class="text">{{content}}</text>
 </view>

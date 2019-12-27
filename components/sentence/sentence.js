@@ -1,9 +1,8 @@
+import { classicBehavior } from '../classic-beh.js'
 Component({
-  properties:{
-    img_path:{
-      type:String,
-      value:""
-    }
+  behaviors: [classicBehavior],
+  properties: {
+
   },
-   
+
 })

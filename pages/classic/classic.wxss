@@ -120,12 +120,13 @@ color:rgba(0,0,0,1);
 .bottom .pre-icon{
   width: 23rpx;
   height: 24rpx;
-  padding-left: 20rpx;
+  padding: 20rpx;
+  
 }
 .bottom .next-icon{
   width: 23rpx;
   height: 24rpx;
-  padding-right: 20rpx;
+  padding:20rpx;
 }
 
 

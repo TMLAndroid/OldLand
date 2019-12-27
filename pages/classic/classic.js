@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    classics: [],
-    index:0
+    classic:null,
+    
     
   },
 
@@ -17,17 +17,18 @@ Page({
    */
   onLoad: function (options) {
     
+    
     let that = this;
     
-      console.log(this.data.classics[0])
+      
     
     classicModel.getLatest((res)=>{
-      this.data.classics.push(res);
-      console.log('ress', res)
+      
+      
       that.setData({
-        classics: that.data.classics
+        classic: res
       })
-      console.log(that.data.classics)
+      console.log(that.data.classic)
     })
       // http.getLatest().then(res=>{
       //   this.data.classics.push(res);
@@ -39,11 +40,21 @@ Page({
    
   },
 
-onPre(){
-  console.log('pre');
+  onPrevious(){
+    let index = this.data.classic.index;
+    classicModel.getPrevious(index,(res) => {
+    this.setData({
+      classic: res
+    })
+  })
 },
   onNext(){
-    console.log('next');
+    let index = this.data.classic.index;
+    classicModel.getNext(index,(res)=>{
+      this.setData({
+        classic: res
+      })
+    })
   },
 
   /**

@@ -1,12 +1,61 @@
-.movice-bar{
+.content{
   width: 100%;
-  height: 500rpx;
+  position: absolute;
+  top: 146rpx;
+  bottom: 121rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.music-bg{
+  width: 420rpx;
+  height: 420rpx;
+  border-radius:50%;
+}
+.pause-icon{
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:150rpx;
 }
 
 .type-icon{
+  width:44rpx;
+  height:127rpx;
   position: relative;
-  top: -60rpx;
-  left: 30rpx;
-  width: 46rpx;
-  height: 142rpx;
+  bottom: 160rpx;
+  right:310rpx;
+}
+
+.text{
+  font-size:34rpx;
+  font-family:PingFang;
+  font-weight:400;
+  color:rgba(15,15,15,1);
+  padding-top: 37rpx;
+  padding-left: 94rpx;
+ padding-right: 97rpx;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotation {
+  -webkit-transform: rotate(360deg);
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
 }

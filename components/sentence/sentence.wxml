@@ -1,2 +1,5 @@
-<image class="movice-bar" src="{{img_path}}"></image>
-<image class="type-icon" src="/images/movie/type_icon.png"></image>
+<view class="content">
+  <image class="movice-bar" src="{{img}}"></image>
+  <image class="type-icon" src="images/sentence.png"></image>
+  <text class="text">{{content}}</text>
+</view>

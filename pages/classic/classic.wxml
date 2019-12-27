@@ -1,7 +1,7 @@
 <view class="header">
   <view class="left">
     <text class="tag">No.</text>
-    <text class="day">{{classics[index].index}}</text>
+    <text class="day">{{classic.index}}</text>
     <view class="split-line"></view>
     <view class="year-month">
       <text class="month">三月</text>
@@ -10,16 +10,17 @@
   </view>
   <view class="right">
     <image class="like-icon" src="/images/movie/like_check.png"></image>
-    <text class="like-num-text">{{classics[index].fav_nums}}</text>
+    <text class="like-num-text">{{classic.fav_nums}}</text>
     <image class="share-icon" src='/images/movie/share.png'></image>
   </view> 
 </view>
-<cmp-movie img="{{classics[index].image}}" content="{{classics[index].content}}"></cmp-movie>
-
+<cmp-movie wx:if="{{classic.type==100}}" img="{{classic.image}}" content="{{classic.content}}"></cmp-movie>
+<cmp-music  wx:if="{{classic.type==200}}" img="{{classic.image}}" content="{{classic.content}}" src="{{classic.url}}" title="{{classic.title}}"></cmp-music>
+<cmp-sentence wx:if="{{classic.type==300}}" img="{{classic.image}}" content="{{classic.content}}"></cmp-sentence>
 <view class="bottom-container">
   <view class="bottom">
-    <image bindtap="onPre" class="pre-icon" src="/images/movie/pre.png"></image>
-    <text class="movice-title">{{classics[index].title}}</text>
+    <image bindtap="onPrevious" class="pre-icon" src="/images/movie/pre.png"></image>
+    <text class="movice-title">{{classic.title}}</text>
     <image bindtap="onNext" class="next-icon" src="/images/movie/next.png"></image>
   </view>
 </view>

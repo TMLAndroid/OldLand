@@ -1,2 +1,10 @@
-<image class="movice-bar" src="{{img_path}}"></image>
-<image class="type-icon" src="/images/movie/type_icon.png"></image>
+<view class="content">
+
+  <image class="music-bg {{playing? 'rotation':''}}" src="{{img}}"></image>
+  <image  class="pause-icon" src="{{playing?'images/playing.png':'images/pause.png'}}" bindtap="onPlay"></image>
+  
+
+  <image class="type-icon" src="images/type_icon.png"></image>
+   
+  <text class="text">{{content}}</text>
+</view>
