@@ -2,7 +2,8 @@
   "usingComponents":{
     "cmp-movie":"/components/movie/movie",
     "cmp-music": "/components/music/music",
-    "cmp-sentence": "/components/sentence/sentence"
-
+    "cmp-sentence": "/components/sentence/sentence",
+    "cmp-navi":"/components/navi/navi",
+    "cmp-like":"/components/like/like"
   }
 }

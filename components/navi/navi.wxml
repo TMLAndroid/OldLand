@@ -1,0 +1,7 @@
+<view class="bottom-container">
+  <view class="bottom">
+    <image bindtap="onNext" class="pre-icon" src="images/triangle@left.png"></image>
+    <text class="movice-title">{{title}}</text>
+    <image bindtap="onPrevious" class="next-icon" src="images/triangle@right.png"></image>
+  </view>
+</view>

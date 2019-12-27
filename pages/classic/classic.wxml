@@ -8,19 +8,9 @@
       <text class="year">2018</text>
     </view>
   </view>
-  <view class="right">
-    <image class="like-icon" src="/images/movie/like_check.png"></image>
-    <text class="like-num-text">{{classic.fav_nums}}</text>
-    <image class="share-icon" src='/images/movie/share.png'></image>
-  </view> 
+  <cmp-like count="{{classic.fav_nums}}" bind:like="onLike" like="{{like}}"></cmp-like>
 </view>
 <cmp-movie wx:if="{{classic.type==100}}" img="{{classic.image}}" content="{{classic.content}}"></cmp-movie>
 <cmp-music  wx:if="{{classic.type==200}}" img="{{classic.image}}" content="{{classic.content}}" src="{{classic.url}}" title="{{classic.title}}"></cmp-music>
 <cmp-sentence wx:if="{{classic.type==300}}" img="{{classic.image}}" content="{{classic.content}}"></cmp-sentence>
-<view class="bottom-container">
-  <view class="bottom">
-    <image bindtap="onPrevious" class="pre-icon" src="/images/movie/pre.png"></image>
-    <text class="movice-title">{{classic.title}}</text>
-    <image bindtap="onNext" class="next-icon" src="/images/movie/next.png"></image>
-  </view>
-</view>
+<cmp-navi catch:right="onPrevious" title="{{classic.title}}"catch:left="onNext"></cmp-navi>

@@ -1,6 +1,8 @@
 let http = require('../../utils/http_.js');
 import {ClassicModel} from '../../model/classic.js'
+import { LikeModel } from '../../model/like.js'
 let classicModel = new ClassicModel();
+let likeModel = new LikeModel();
 Page({
 
   /**
@@ -8,8 +10,10 @@ Page({
    */
   data: {
     classic:null,
-    
-    
+    like:true,
+    count:0,
+    isLast:true,
+    isFirst:false
   },
 
   /**
@@ -23,8 +27,7 @@ Page({
       
     
     classicModel.getLatest((res)=>{
-      
-      
+      this._getClassicLikeStatus(res.id,res.type);
       that.setData({
         classic: res
       })
@@ -54,6 +57,28 @@ Page({
       this.setData({
         classic: res
       })
+    })
+  },
+  onLike(e){
+   let like = e.detail.like;
+   if(like){
+      this.setData({
+        like:false
+      })
+   }else{
+     this.setData({
+       like: true
+     })
+   }
+    
+  },
+
+  _getClassicLikeStatus(id,type){
+    likeModel.getClassicLikeStatus(id,type,(data)=>{
+        this.setData({
+          like: data.like_status,
+          count: data.fav_nums
+        })
     })
   },
 
