@@ -4,6 +4,7 @@
     "cmp-music": "/components/music/music",
     "cmp-sentence": "/components/sentence/sentence",
     "cmp-navi":"/components/navi/navi",
-    "cmp-like":"/components/like/like"
+    "cmp-like":"/components/like/like",
+    "cmp-img-btn":"/components/image-button/index"
   }
 }

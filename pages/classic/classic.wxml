@@ -8,9 +8,11 @@
       <text class="year">2018</text>
     </view>
   </view>
-  <cmp-like count="{{classic.fav_nums}}" bind:like="onLike" like="{{like}}"></cmp-like>
+  <view class="right">
+    <cmp-like count="{{classic.fav_nums}}" bind:like="onLike" like="{{like}}"></cmp-like>
+  </view>
 </view>
 <cmp-movie wx:if="{{classic.type==100}}" img="{{classic.image}}" content="{{classic.content}}"></cmp-movie>
 <cmp-music  wx:if="{{classic.type==200}}" img="{{classic.image}}" content="{{classic.content}}" src="{{classic.url}}" title="{{classic.title}}"></cmp-music>
-<cmp-sentence wx:if="{{classic.type==300}}" img="{{classic.image}}" content="{{classic.content}}"></cmp-sentence>
-<cmp-navi catch:right="onPrevious" title="{{classic.title}}"catch:left="onNext"></cmp-navi>
+<cmp-sentence wx:if="{{classic.type==300}}" img="{{classic.image}}" content="{{classic.content}}"></cmp-sentence> 
+<cmp-navi catch:right="onPrevious" catch:left="onNext"title="{{classic.title}}" isLast="{{isLast}}" isFirst="{{isFirst}}"></cmp-navi>

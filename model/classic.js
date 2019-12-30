@@ -11,6 +11,7 @@ class ClassicModel extends HTTP{
       success:(data)=>{
         let key = this._fullKey(data.index);
         wx.setStorageSync(key, data)
+        this._setLatestIndex(data.index)
         sCallback(data);
       }
     })
@@ -26,7 +27,6 @@ class ClassicModel extends HTTP{
     let data = wx.getStorageSync(key);
     
     if (data) {
-      console.log('jinlai')
       sCallback(data);
     } else {
       this.request({
@@ -44,24 +44,45 @@ class ClassicModel extends HTTP{
   getNext(index,sCallback){
     let key = this._fullKey(index+1);
     let data =wx.getStorageSync(key);
-    console.log('数据',key,data)
     if(data){
-      console.log('jinlai')
       sCallback(data);
     }else{
       this.request({
         url: 'classic/' + index + '/next',
         success: (data) => {
           let key = this._fullKey(data.index);
-          try {
-            wx.setStorageSync(key, data);
-          } catch (e) { console.log('异常',e)}
-          
+          wx.setStorageSync(key, data);
           sCallback(data);
         }
       })
     }
-    
+  }
+
+  isLast(index){
+    let key = this._fullKey('latest-' + index) 
+    let latestEpsoide = wx.getStorageSync(key);
+    if(latestEpsoide){
+      if(latestEpsoide==index){
+        return true;
+      }
+    }
+    else return false
+  }
+
+  isFirst(index){
+    if(index == 1){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  /**
+ * 在缓存中存放最新一期的期数
+ */
+  _setLatestIndex(index) {
+    let key = this._fullKey('latest-' + index)
+    wx.setStorageSync(key, index)
   }
 
 }

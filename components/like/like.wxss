@@ -1,19 +1,9 @@
-.right{
-  margin-left: 14rpx;
-  float: right;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: relative;
-  height: 100%;
-  align-items: center;
-  margin-right: 31rpx;
-}
- .right .like-icon{
+
+  .like-icon{
   width: 32rpx;
   height: 28rpx;
 }
- .right .like-num-text{
+ .like-num-text{
   font-size:18rpx;
   font-family:PingFang;
   font-weight:400;
@@ -23,7 +13,7 @@
   margin-left: 6rpx;
   margin-right:41rpx;
 }
- .right .share-icon{
+ .share-icon{
   width: 28rpx;
   height: 28rpx;
 }

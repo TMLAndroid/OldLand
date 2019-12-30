@@ -29,7 +29,9 @@ Page({
     classicModel.getLatest((res)=>{
       this._getClassicLikeStatus(res.id,res.type);
       that.setData({
-        classic: res
+        classic: res,
+        isLast: classicModel.isLast(res.index),
+        isFirst: classicModel.isFirst(res.index)
       })
       console.log(that.data.classic)
     })
@@ -46,29 +48,48 @@ Page({
   onPrevious(){
     let index = this.data.classic.index;
     classicModel.getPrevious(index,(res) => {
-    this.setData({
-      classic: res
-    })
+      if(res){
+        this._getClassicLikeStatus(res.id, res.type)
+        this.setData({
+          classic: res,
+          isLast: classicModel.isLast(res.index),
+          isFirst: classicModel.isFirst(res.index)
+        })
+      }else{
+        console.log('no classic data');
+      }
   })
 },
   onNext(){
     let index = this.data.classic.index;
     classicModel.getNext(index,(res)=>{
-      this.setData({
-        classic: res
-      })
+      if(res){
+        this._getClassicLikeStatus(res.id,res.type)
+        this.setData({
+          classic: res,
+          isLast:classicModel.isLast(res.index),
+          isFirst:classicModel.isFirst(res.index)
+        })
+      }else{
+        console.log('no classic data');
+      }
     })
   },
   onLike(e){
    let like = e.detail.like;
    if(like){
-      this.setData({
-        like:false
-      })
+     likeModel.like(false, this.data.classic.id, this.data.classic.type,(data)=>{
+       this.setData({
+         like: false
+       })
+     });
+     
    }else{
-     this.setData({
-       like: true
-     })
+     likeModel.like(true, this.data.classic.id, this.data.classic.type, (data) => {
+       this.setData({
+         like: true
+       })
+     });
    }
     
   },

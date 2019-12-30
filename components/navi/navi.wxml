@@ -1,7 +1,7 @@
 <view class="bottom-container">
   <view class="bottom">
-    <image bindtap="onNext" class="pre-icon" src="images/triangle@left.png"></image>
+    <image bindtap="onNext" class="pre-icon" src="{{isLast?'images/triangle.dis@left.png':'images/triangle@left.png'}}"></image>
     <text class="movice-title">{{title}}</text>
-    <image bindtap="onPrevious" class="next-icon" src="images/triangle@right.png"></image>
+    <image bindtap="onPrevious" class="next-icon" src="{{isFirst?'images/triangle.dis@right.png':'images/triangle@right.png'}}"></image>
   </view>
 </view>

@@ -1,5 +1,4 @@
-<view class="right">
+
     <image class="like-icon" bindtap="onLike" src="{{like?'images/like.png':'images/like@dis.png'}}"></image>
     <text class="like-num-text">{{count}}</text>
     <image class="share-icon" src='/images/movie/share.png'></image>
-  </view> 

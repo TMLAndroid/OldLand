@@ -1,6 +1,8 @@
 Component({
   properties:{
-    title:String
+    title:String,
+    isLast:Boolean,
+    isFirst:Boolean
   },
   methods:{
     onPrevious:function(){
