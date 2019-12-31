@@ -1,0 +1,139 @@
+page{
+  
+
+}
+.content-page{
+  display: flex;
+  flex-direction: column;
+  background:rgba(249,249,249,1);
+}
+.content-page .title{
+  text-align: center;
+  margin-top: 40rpx;
+  margin-bottom: 24rpx;
+  font-size:34rpx;
+  font-family:PingFang;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+}
+
+  .content-page .list{
+   display: flex;
+  flex-direction: row;
+  width: 100%;
+   flex-wrap: wrap;
+    padding-left: 40rpx;
+   padding-right: 40rpx;
+}
+  .content-page .list .item{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
+    margin-bottom:60rpx; 
+    width:240rpx;
+    height:360rpx;
+    border-radius:8rpx;
+    background: white;
+}
+
+.content-page .list .item .item-title{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  font-size:24rpx;
+  font-family:PingFang;
+  font-weight:400;
+  color:rgba(31,31,31,1);
+}
+.content-page .list .item .author{
+  margin-top: 9rpx;
+  margin-left: 20rpx;
+  font-size:20rpx;
+  font-family:PingFang;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+
+}
+.content-page .list .item .other{
+  font-size:20rpx;
+  font-family:PingFang;
+  font-weight:400;
+  color:rgba(187,187,187,1);
+  padding-left: 56rpx;
+  padding-top: 20rpx;
+  
+}
+
+
+ .icon1{
+  width: 240rpx;
+  height: 222rpx;
+}
+
+.content-history-page{
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+}
+
+.content-column{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.content-column .line{
+  width:8rpx;
+  height:28rpx;
+  background:rgba(0,0,0,1);
+}
+
+.content-column .title{
+font-size:28rpx;
+font-family:PingFang;
+font-weight:400;
+color:rgba(1,1,1,1);
+line-height:40rpx;
+padding-left: 21rpx;
+}
+
+.content-column .item{
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  padding-left: 21rpx;
+  padding-right: 21rpx;
+  padding-top: 13rpx;
+  padding-bottom: 13rpx;
+  background:rgba(247,247,247,1);
+  border-radius:2rpx;
+  font-size:28rpx;
+  font-family:PingFang;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+
+
+.search-container{
+width: 100%;
+height:108rpx;
+background:rgba(255,255,255,1);
+box-shadow:0rpx 2rpx 10rpx 0rpx rgba(203,203,203,0.1);
+display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search{
+  width:690rpx;
+  height:68rpx;
+  background:rgba(247,247,247,1);
+  border-radius:34rpx;
+}
+
+.content{
+  position: absolute;
+  top:108rpx;
+  width: 100%;  
+}
