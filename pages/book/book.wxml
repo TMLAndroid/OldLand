@@ -4,8 +4,8 @@
   <view class="content-page" wx:if="{{curPage=='content'}}">
     <text class="title">精选</text>
     <view class="list" >
-    <block wx:for="{{hookBookList}}" wx:key="index" wx:item="item">
-      <view class="item">
+    <block wx:for="{{hookBookList}}" wx:key="id" wx:for-item="item">
+      <view class="item" bindtap="onItemDetail" data-id='{{item.id}}'>
         <image class="icon1" src="{{item.image}}"></image>
         <text class="item-title">{{item.title}}</text>
         <text class="author">{{item.author}}</text>

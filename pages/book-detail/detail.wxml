@@ -1,0 +1,30 @@
+<view class="content-icon">
+<image class="icon" src='{{detail.image}}'></image>
+<text class="title">{{detail.title}}</text>
+<block wx:for="{{detail.author}}" wx:item="item">
+  <text class="author">{{item}}</text>
+</block>
+</view>
+
+<view class="content-comment">
+  <text class="title">短评</text>
+  <view class="comment-container">
+    <block  wx:for="{{comment.comments}}" wx:item="item" wx:key="index">
+      <text class="item item_{{index}}" space="emsp" style="">{{item.content}} +{{item.nums}}</text>
+    </block>
+  </view>
+</view>
+
+<view class="content-intr">
+  <text class="title">内容简介</text>
+  <rich-text class="content">{{detail.summary}}</rich-text>
+</view>
+
+<view class="content-detail">
+  <text class="title">书本信息</text>
+  <text class="other" space="emsp">出版社 {{detail.publisher}}</text>
+  <text class="other" space="emsp">出版年 {{detail.pubdate}}</text>
+  <text class="other" space="emsp">页数  {{detail.pages}}</text>
+  <text class="other" space="emsp">定价  {{detail.price}}</text>
+  <text class="other"space="emsp">装帧  {{detail.binding}}</text>
+</view>

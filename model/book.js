@@ -4,6 +4,8 @@ class BookModel extends HTTP{
   constructor(){
     super()
   }
+  
+  //搜索
   search(text,success){
     let searchList = wx.getStorageSync(this.prefix);
     if (searchList){
@@ -13,7 +15,6 @@ class BookModel extends HTTP{
       searchList.push(text)
     }
     wx.setStorageSync(this.prefix, searchList)
-    console.log('搜索',searchList)
     var parmas={
       url:'book/search',
       data:{
@@ -26,6 +27,7 @@ class BookModel extends HTTP{
     this.request(parmas);
   }
 
+//热词
   hotkey(success){
     var params={
       url:'book/hot_keyword',
@@ -34,12 +36,30 @@ class BookModel extends HTTP{
     this.request(params);
   }
 
+//热门书籍
   hotbook(success){
     var params={
       url:'book/hot_list',
       success:success
     }
     this.request(params);
+  }
+
+//书籍详情
+  detail(id,success){
+    var params={
+      url:'book/'+id+"/detail",
+      success:success
+    }
+    this.request(params)
+  }
+
+  comment(id,success){
+    var params={
+      url:'book/'+id+'/short_comment',
+      success: success
+    }
+    this.request(params)
   }
 }
 export{

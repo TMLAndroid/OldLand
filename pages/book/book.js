@@ -51,6 +51,14 @@ Page({
     })
   },
 
+  onItemDetail:function(e){
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../book-detail/detail?id='+id,
+    })
+    
+  },
+
   onConfirm:function(e){
     this.setData({
       curPage:SEARCH
