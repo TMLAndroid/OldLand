@@ -5,6 +5,6 @@
     "cmp-sentence": "/components/sentence/sentence",
     "cmp-navi":"/components/navi/navi",
     "cmp-like":"/components/like/like",
-    "cmp-img-btn":"/components/image-button/index"
+    "img-btn-cmp": "/components/image-button/index"
   }
 }

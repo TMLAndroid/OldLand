@@ -54,10 +54,33 @@ class BookModel extends HTTP{
     this.request(params)
   }
 
+//获取短评
   comment(id,success){
     var params={
       url:'book/'+id+'/short_comment',
       success: success
+    }
+    this.request(params)
+  }
+
+  //新增短评
+  commentAdd(id,comment,success){
+    var params={
+      url:'/book/add/short_comment',
+      data:{
+        book_id:id,
+        content:comment
+      },
+      method:'POST',
+      success:success
+    }
+    this.request(params)
+  }
+
+  getLikeNum(id,success){
+    var params={
+      url:'/book/'+id+'/favor',
+      success:success
     }
     this.request(params)
   }

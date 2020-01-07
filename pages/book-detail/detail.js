@@ -1,5 +1,7 @@
 import { BookModel } from '../../model/book.js'
+import {LikeModel} from '../../model/like.js'
 let bookModel = new BookModel();
+let id;
 Page({
 
   /**
@@ -7,25 +9,78 @@ Page({
    */
   data: {
       detail:null,
-      comment:null
+      comment:null,
+      commentPart:null,
+      showInput:false,
+      inputValue:'',
+      favor:null,
+      
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let id = options.id;
+     id = options.id;
     bookModel.detail(id,(data)=>{
       this.setData({
         detail: data
       })
     })
+
     bookModel.comment(id,(data)=>{
       this.setData({
         comment:data
       })
+      if (data.comments.length >3){
+        this.setData({
+          commentPart: data.comments.slice(0,3)
+        })
+      }else{
+        this.setData({
+          commentPart: data.comments
+        })
+      }
     })
 
+    bookModel.getLikeNum(id,(data)=>{
+      this.setData({
+        favor:data
+      })
+    })
+
+  },
+
+  onShareAppMessage:function(e){
+
+  },
+
+  handFocus:function(e){
+    this.setData({
+      showInput:true
+    })
+  },
+  handBlur:function(e){
+    this.setData({
+      showInput: false
+    })
+  },
+  comment:function(e){
+    this.setData({
+      showInput: false
+    })
+    bookModel.commentAdd(id, this.data.inputValue,(data)=>{
+      console.log('评价成功');
+      this.data.comment.comments.unshift({ content: this.data.inputValue, nums:1})
+      this.setData({
+        comment:this.data.comment
+      })
+    })
+  },
+  handInput:function(e){
+    this.setData({
+      inputValue: e.detail.value
+    })
   },
 
   /**
@@ -70,10 +125,5 @@ Page({
     
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  }
+  
 })

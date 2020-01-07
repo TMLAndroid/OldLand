@@ -1,7 +1,7 @@
 <view class="content-icon">
 <image class="icon" src='{{detail.image}}'></image>
 <text class="title">{{detail.title}}</text>
-<block wx:for="{{detail.author}}" wx:item="item">
+<block wx:for="{{detail.author}}" wx:item="item" wx:key="index">
   <text class="author">{{item}}</text>
 </block>
 </view>
@@ -28,3 +28,31 @@
   <text class="other" space="emsp">定价  {{detail.price}}</text>
   <text class="other"space="emsp">装帧  {{detail.binding}}</text>
 </view>
+
+
+<view class="bottom_up" wx:if="{{showInput}}" >
+  <view class="top">
+    <text class="cancel" bindtap="handBlur">取消</text>
+    <text class="confirm" bindtap="comment">确定</text>
+  </view>
+  <view class="comment-container">
+    <block wx:for="{{commentPart}}" wx:key="index" wx:item="item">
+      <text class="item">{{item.content}}</text>
+    </block>
+  </view>
+  <input class="input" placeholder="输入您的短评，可输入12字" placeholder-class="input-holder" focus="{{showInput}}" maxlength="12" bindinput="handInput"></input>
+</view>
+
+
+<view class="bottom" wx:if="{{!showInput}}">
+  <view class="input-container" bindtap="handFocus">
+    <image class="input-icon" src="/images/book-detail/write.png"></image>
+    <text class="input-holder">留下你的短评~</text>
+  </view>
+  <view class="right-container">
+    <image class="like-icon" src="{{favor.like_status==1 ? '/components/like/images/like.png':'/components/like/images/like@dis.png'}}"></image>
+    <text class="like-num">{{favor.fav_nums}}</text>
+    <image  class='share-icon' src="/images/book-detail/share.png"></image>
+  </view>
+</view>
+

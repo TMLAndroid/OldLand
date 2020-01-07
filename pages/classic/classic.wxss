@@ -1,3 +1,5 @@
+
+
 .header{
   height: 100rpx;
   width: 100%;
@@ -68,7 +70,7 @@ color:rgba(0,0,0,1);
 
 }
 
-.right{
+.right{ 
   margin-left: 14rpx;
   float: right;
   display: flex;
@@ -78,6 +80,18 @@ color:rgba(0,0,0,1);
   height: 100%;
   align-items: center;
   margin-right: 31rpx;
+}
+
+
+ .share-icon{
+  width: 28rpx;
+  height: 28rpx;
+  
+}
+
+.share-btn{
+  margin-top:28rpx;
+  margin-left:10rpx;
 }
 
 

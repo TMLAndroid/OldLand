@@ -10,6 +10,9 @@
   </view>
   <view class="right">
     <cmp-like count="{{classic.fav_nums}}" bind:like="onLike" like="{{like}}"></cmp-like>
+    <img-btn-cmp class="share-btn" open-type="share">
+      <image class="share-icon"  slot="img" src='/images/movie/share.png'/>
+    </img-btn-cmp>    
   </view>
 </view>
 <cmp-movie wx:if="{{classic.type==100}}" img="{{classic.image}}" content="{{classic.content}}"></cmp-movie>
