@@ -1,0 +1,7 @@
+
+<view class="item" bindtap="onTap">
+  <image class="icon1" src="{{book.image}}"></image>
+  <text class="item-title">{{book.title}}</text>
+  <text class="author">{{book.author}}</text>
+  <text class="other">233 喜欢·68 短评</text>
+</view>

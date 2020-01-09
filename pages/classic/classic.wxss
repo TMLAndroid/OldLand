@@ -84,8 +84,8 @@ color:rgba(0,0,0,1);
 
 
  .share-icon{
-  width: 28rpx;
-  height: 28rpx;
+  width: 40rpx;
+  height: 40rpx;
   
 }
 
@@ -94,6 +94,12 @@ color:rgba(0,0,0,1);
   margin-left:10rpx;
 }
 
+.share{
+  /* padding:10rpx; */
+  width:40rpx;
+  height:40rpx;
+  
+}
 
 
 

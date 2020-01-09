@@ -11,14 +11,17 @@ Page({
   data: {
     curPage: CONTENT,
     hotList:[],
+    historyList: [],
     hookBookList:[],
-    historyList:[],
+    searchBookList:[],
+     
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.searchPage = this.selectComponent("#search-page");
     this.setData({
       historyList: wx.getStorageSync('book-search')
     })
@@ -46,29 +49,29 @@ Page({
     
   },
   bindblur:function(){
-    this.setData({
-      curPage:CONTENT
-    })
+    if (this.data.curPage == HISTORY){
+      this.setData({
+        curPage:CONTENT
+      })
+    }
   },
 
-  onItemDetail:function(e){
-    let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../book-detail/detail?id='+id,
-    })
-    
+  onReachBottom: function () {
+    console.log('上拉')
+    this.searchPage.more()
   },
 
   onConfirm:function(e){
+    
     this.setData({
       curPage:SEARCH
     })
+    this.searchPage.search()
     let searchKey=e.detail.value;
      
     bookModel.search(searchKey, (data) => {
        
       })
-
      
   },
   
@@ -106,13 +109,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
     
   },
 

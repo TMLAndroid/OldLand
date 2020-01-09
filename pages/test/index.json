@@ -1,0 +1,5 @@
+{
+  "useComponents":{
+    "img-btn-cmp": "/components/image-button/index"
+  }
+}

@@ -1,21 +1,20 @@
 
 <view class="page">
   <mp-searchbar   bindfocus="bindfocus" bindclear="bindclear" bindblur="bindblur" bindconfirm="onConfirm"></mp-searchbar>
+
   <view class="content-page" wx:if="{{curPage=='content'}}">
     <text class="title">精选</text>
-    <view class="list" >
-    <block wx:for="{{hookBookList}}" wx:key="id" wx:for-item="item">
-      <view class="item" bindtap="onItemDetail" data-id='{{item.id}}'>
-        <image class="icon1" src="{{item.image}}"></image>
-        <text class="item-title">{{item.title}}</text>
-        <text class="author">{{item.author}}</text>
-        <text class="other">233 喜欢·68 短评</text>
-      </view>
-       </block>
-    </view>
-    
+     <view class="list" >
+      <block wx:for="{{hookBookList}}" wx:key="id" wx:for-item="item">
+        <cmp-book book="{{item}}"></cmp-book>
+      </block>
+    </view>  
   </view>
-  <view class="content-search-page" wx:if="{{curPage=='search'}}">搜索</view>
+
+  <view class="content-search-page" wx:if="{{curPage=='search'}}">
+    <cmp-search id='search-page' search="{{searchAction}}" more="{{moreAction}}"></cmp-search>
+  </view>
+  
   <view class="content-history-page" wx:if="{{curPage=='history'}}">
     <view class="content-column">
       <view class="line"></view>

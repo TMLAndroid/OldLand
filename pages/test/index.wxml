@@ -1,0 +1,9 @@
+ 
+<!-- <button    plain='{{true}}' class="container" style="background: red;">
+  <image class="share" src="/images/movie/share.png" />
+</button> -->
+ 
+
+<img-btn-cmp class="share-btn" open-type="share" style="background: red;">
+  <image class="share" slot="img" src="/images/movie/share.png" />
+</img-btn-cmp>

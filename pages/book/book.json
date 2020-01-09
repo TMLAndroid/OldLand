@@ -1,5 +1,10 @@
 {
   "usingComponents": {
-    "mp-searchbar": "/weui-miniprogram/searchbar/searchbar"
+    "mp-searchbar": "/weui-miniprogram/searchbar/searchbar",
+    "cmp-book":"/components/book/index",
+    "cmp-search":"/components/search/index"
+  },
+  "window": {
+    "onReachBottomDistance":"60"
   }
 }

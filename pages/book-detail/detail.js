@@ -27,7 +27,6 @@ Page({
         detail: data
       })
     })
-
     bookModel.comment(id,(data)=>{
       this.setData({
         comment:data
@@ -42,7 +41,6 @@ Page({
         })
       }
     })
-
     bookModel.getLikeNum(id,(data)=>{
       this.setData({
         favor:data
